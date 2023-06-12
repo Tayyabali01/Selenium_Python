@@ -81,7 +81,9 @@ EditDetail_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.
 EditDetail_btn.click()
 
 Roletype_title = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[normalize-space()='Title']")))
-Roletype_title.click()
+driver.execute_script("arguments[0].value = 'HRManager Rabail'", Roletype_title)
+
+Roletype_Enter = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='title']")))
+driver.execute_script("arguments[1].value = 'New Text'", Roletype_Enter)
 
 time.sleep(30)
-#  test
