@@ -30,31 +30,6 @@ print(selenium.__version__)
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.maximize_window()
 
-# Define the output file path
-output_file = r"C:\Users\Tayyab Ali\Documents\Bandicam\Automation Recording"
-# Get the screen resolution
-screen_size = pyautogui.size()
-# Create a VideoWriter object to save the frames as a video
-fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-video_writer = cv2.VideoWriter(output_file, fourcc, 30.0, screen_size)
-# Create a Chrome WebDriver instance
-# Perform your automation steps
-# ...
-# Start recording
-start_time = time.time()
-
-while True:
-    # Capture the screen frame
-    screenshot = pyautogui.screenshot()
-    frame = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
-
-    # Write the frame to the video file
-    video_writer.write(frame)
-
-    # Check if the recording time exceeds the desired duration (e.g., 10 seconds)
-    if time.time() - start_time > 200:
-        break
-
 driver.get('https://devuser.yallagrub.com/')
 WAKHA_AlBrasha = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//body/div[@id='root']/div[contains(@class,'mx-4')]/div[contains(@class,'flex flex-col md:flex-row md:flex-wrap')]/div[1]/div[1]/div[1]")))
 # click the element
@@ -295,13 +270,6 @@ print("Table_No:", Table_No)
 print("Date_type:", Date_type)
 print("Time_type:", Time_type)
 
-
-
-# Stop recording and close the browser
-video_writer.release()
-driver.quit()
-
-print("Screen recording completed. Saved at:", output_file)
 
 
 
