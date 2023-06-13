@@ -184,6 +184,7 @@ Expiration_Textfield.click()
 Expiration_Textfield.send_keys("1256")
 time.sleep(2)
 
+
 driver.switch_to.default_content()
 
 iframe = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'iframe[name^="__privateStripeFrame"]')))
