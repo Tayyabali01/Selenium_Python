@@ -35,10 +35,14 @@ WAKHA_AlBrasha = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.
 # click the element
 WAKHA_AlBrasha.click()
 time.sleep(2)
+Breadsitem_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[normalize-space()='Breads']")))
+Breadsitem_btn.click()
+time.sleep(2)
+
 # enter text
 
-Statersbolanibonjon_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[normalize-space()='Fried eggplants covered with fresh cooked tomatoes, onion & yogurt sauce. Served with bread & chutni (Spicy dip)']")))
-Statersbolanibonjon_btn .click()
+BlackseedNaan_item = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//h6[normalize-space()='Blackseed Naan']")))
+BlackseedNaan_item.click()
 time.sleep(2)
 
 Select1_btn= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='flex justify-between items-center menu-quantity-items']//div[3]//*[name()='svg']")))
@@ -48,8 +52,28 @@ time.sleep(2)
 
 Addtocart_btn= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@class='flex w-full bg-pink text-white py-3 px-4 rounded justify-between']")))
 Addtocart_btn.click()
+time.sleep(3)
+
+ShinwariBBQ_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[normalize-space()='Shinwari BBQ']")))
+ShinwariBBQ_btn.click()
 time.sleep(2)
-#Password_Text.send_keys("Ali12345")
+
+CHICKENCHARGHA_item = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//h6[normalize-space()='CHICKEN CHARGHA']")))
+CHICKENCHARGHA_item.click()
+time.sleep(2)
+
+Select1_btn= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='flex justify-between items-center menu-quantity-items']//div[3]//*[name()='svg']")))
+Select1_btn.click()
+time.sleep(2)
+
+# Create an instance of ActionChains
+actions = ActionChains(driver)
+# Double-click on the element
+actions.double_click(Select1_btn).perform()
+
+Addtocart_btn= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@class='flex w-full bg-pink text-white py-3 px-4 rounded justify-between']")))
+Addtocart_btn.click()
+time.sleep(3)
 
 # Scroll down the last section of screen
 #driver.execute_script("window.scrollTo(0.5, document.body.scrollHeight);")
@@ -122,7 +146,6 @@ time.sleep(2)
 #Select Preffered time
 SelectPrefferedtime_textbox = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Select Preferred Time')]")))
 SelectPrefferedtime_textbox .click()
-time.sleep(2)
 
 # Locate the dropdown options and select the option by index
 options = driver.find_elements(By.XPATH, "//li[contains(@class, 'cursor-default')]")
@@ -134,23 +157,35 @@ time.sleep(5)
 # SelectPrefferedtime1st_btn.click()
 
 
-#Select 2nd Time Slot
-Select2ndTimeSlot_textbox = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@id='headlessui-listbox-button-:r8:']//span[@class='flex items-center']")))
-Select2ndTimeSlot_textbox .click()
-# Locate the dropdown options and select the option by index
-options = driver.find_elements(By.XPATH, "//li[contains(@class, 'cursor-default')]")
-index = 0  # Index of the option to be selected (assuming '17:45' is the first option)
-options[index].click()
+# #Select 2nd Time Slot
+# Select2ndTimeSlot_textbox = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@id='headlessui-listbox-button-:r8:']//span[@class='flex items-center']")))
+# Select2ndTimeSlot_textbox .click()
+# # Scroll to the element
+# # Locate the dropdown options and select the option by index
+# options = driver.find_elements(By.XPATH, "//li[contains(@class, 'cursor-default')]")
+# index = 0  # Index of the option to be selected (assuming '17:45' is the first option)
+# options[index].click()
 
-time.sleep(5)
+# time.sleep(5)
 # Select2ndTimeSlot_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@class='ml-3 block truncate'][normalize-space()='18:00']")))
 # Select2ndTimeSlot_btn .click()
 # time.sleep(2)
 
 #Select 3rd Time Slot
 
+Select2ndTimeSlot_textbox = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Time Slot Option')]")))
+Select2ndTimeSlot_textbox.click()
+
+# Locate the dropdown options and select the option by index
+options = driver.find_elements(By.XPATH, "//li[contains(@class, 'cursor-default')]")
+index = 0  # Index of the option to be selected (assuming '17:45' is the first option)
+options[index].click()
+
+time.sleep(5)
+
 Select3rdTimeSlot_textbox = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Time Slot Option')]")))
 Select3rdTimeSlot_textbox .click()
+
 # Locate the dropdown options and select the option by index
 options = driver.find_elements(By.XPATH, "//li[contains(@class, 'cursor-default')]")
 index = 0  # Index of the option to be selected (assuming '17:45' is the first option)
@@ -186,7 +221,7 @@ time.sleep(10)
 
 EnterOTP_Textfield = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='otp1']")))
 EnterOTP_Textfield.click()
-EnterOTP_Textfield.send_keys("55690")
+EnterOTP_Textfield.send_keys("95690")
 
 Verify_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Verify']")))
 Verify_btn.click()
