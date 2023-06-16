@@ -163,7 +163,7 @@ if formatted_current_time > selected_preferred_time:
 
  #Code for canceling the order
     CancelOrder_btn = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Cancel Order']")))
+    EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Cancel Order']")))
     CancelOrder_btn.click()
     time.sleep(3)
     CancelOrderSuccess_btn = WebDriverWait(driver, 10).until(
@@ -211,7 +211,7 @@ else:
         EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Accept Order']"))
     )
     AcceptOrder_btn.click()
-    time.sleep(10)
+    time.sleep(3)
 
 #Click on Running orders
 RunningOrders_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[@for='RunningOrders']")))
@@ -232,10 +232,10 @@ halfway_point = dialog_box_height // 2
 
 scroll_script = f"arguments[0].scroll(0, {halfway_point})"
 driver.execute_script(scroll_script, parent_element)
-time.sleep(5)
+time.sleep(3)
 
 print("working fine", FirstRunningOrders_button)
-time.sleep(8)
+time.sleep(2)
 
 order_type_element= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(), 'Order Type')]/following-sibling::div")))
 ordertype = order_type_element.text
@@ -267,7 +267,7 @@ time.sleep(2)
 
 SendtoKitchen_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Send To Kitchen']")))
 SendtoKitchen_button.click()
-time.sleep(5)
+time.sleep(3)
 
 driver.refresh()
 #Click on Running orders
@@ -289,10 +289,10 @@ halfway_point = dialog_box_height // 2
 
 scroll_script = f"arguments[0].scroll(0, {halfway_point})"
 driver.execute_script(scroll_script, parent_element)
-time.sleep(5)
+time.sleep(2)
 Readytoserve_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Ready to Serve']")))
 Readytoserve_button.click()
-time.sleep(5)
+time.sleep(2)
 
 driver.refresh()
 #Click on Running orders
@@ -314,11 +314,11 @@ halfway_point = dialog_box_height // 2
 
 scroll_script = f"arguments[0].scroll(0, {halfway_point})"
 driver.execute_script(scroll_script, parent_element)
-time.sleep(5)
+time.sleep(2)
 
 Serve_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Serve']")))
 Serve_button.click()
-time.sleep(5)
+time.sleep(2)
 
 driver.refresh()
 #Click on Running orders
@@ -340,11 +340,11 @@ halfway_point = dialog_box_height // 2
 
 scroll_script = f"arguments[0].scroll(0, {halfway_point})"
 driver.execute_script(scroll_script, parent_element)
-time.sleep(5)
+time.sleep(2)
 
 MarkCopleted_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Mark Completed']")))
 MarkCopleted_button.click()
-time.sleep(5)
+time.sleep(2)
 
 driver.refresh()
 HistoryOrders_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[normalize-space()='History']")))
@@ -365,13 +365,45 @@ halfway_point = dialog_box_height // 2
 
 scroll_script = f"arguments[0].scroll(0, {halfway_point})"
 driver.execute_script(scroll_script, parent_element)
-time.sleep(5)
+time.sleep(2)
 
-Close_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='btn btn-outline-pink me-3']")))
-Close_button.click()
-time.sleep(5)
+Refund1_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='btn btn-outline-pink me-3']")))
+Refund1_button.click()
+time.sleep(2)
+
+
+#Refund screen 
+YesFullRefund_Checkbox = WebDriverWait(driver, 10).until(
+EC.element_to_be_clickable((By.XPATH, "//input[@id='fullRefund']")))
+YesFullRefund_Checkbox.click()
+   
+SelectReason1_Checkbox = WebDriverWait(driver, 10).until(
+EC.element_to_be_clickable((By.XPATH, "//input[@id='reason1']")))
+SelectReason1_Checkbox.click()
+time.sleep(2)
+
+Refund_btn = WebDriverWait(driver, 10).until(
+EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Refund']")))
+Refund_btn.click()
+time.sleep(2)
 
 driver.refresh()
+RefundedOrders_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[normalize-space()='Refunded']")))
+RefundedOrders_button.click()
+time.sleep(2)
+
+FirstRefundedOrders_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='row mx-0 align-items-center'][1]")))
+FirstRefundedOrders_button.click()
+time.sleep(2)
+Close_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='btn btn-outline-pink me-3']")))
+Close_button.click()
+time.sleep(2)
+driver.refresh()
+
+ExportOrderFile_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[normalize-space()='Export']")))
+ExportOrderFile_button.click()
+
+
 time.sleep(100)
 
 
