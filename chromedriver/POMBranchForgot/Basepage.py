@@ -25,7 +25,8 @@ import random
 import time
 import subprocess
 from selenium.webdriver.chrome.service import Service
-from locators import UserApp
+from Locators import ForgotPassword
+
 from Testdata import Testdata
 
 chrome_driver_path = ChromeDriverManager().install()
@@ -33,15 +34,9 @@ service = Service(chrome_driver_path)
 driver = webdriver.Chrome(service=service)
 driver.get(Testdata.User_Url)
 driver.maximize_window()
-User= UserApp(driver)
-User.WAKHA_AlBrasha()
-User.Breadsitem_btn()
-time.sleep(2)
-User.BlackseedNaan_item
-User.Select1_btn
-User.Addtocart_btn
-User.ShinwariBBQ_btn
-User.CHICKENCHARGHA_item
-User.AddTip_btn
-User.LetsPlanYourOrder_btn
-
+#Select Item and Add to Cart Successfully
+User= ForgotPassword(driver)
+User.Forgot_Password()
+User.EnterEmail_Textfiled("tayyabalisa123@gmail.com")
+User.ResetPassword_Button()
+User.Close_Button()

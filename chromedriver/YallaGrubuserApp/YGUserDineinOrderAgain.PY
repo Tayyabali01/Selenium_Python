@@ -214,7 +214,7 @@ Email_Textfield.send_keys("tayyabalisa123@gmail.com")
 PhoneNumber_Textfield = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='1 (702) 123-4567']")))
 PhoneNumber_Textfield.click()
 time.sleep(2)
-PhoneNumber_Textfield.send_keys("7373474775")
+PhoneNumber_Textfield.send_keys("1527773703")
 
 Checkout_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[normalize-space()='Checkout']")))
 Checkout_btn.click()
