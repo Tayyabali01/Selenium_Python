@@ -81,6 +81,20 @@ Card_Information.PayNow_btn()
 #TrackOrder Screen
 TrackingOrderInformation = Trackorder(driver)
 TrackingOrderInformation.TrackOrder_btn()
+#Print the text
+text= TrackingOrderInformation.Print_OrderNumber()
+print(text)
+text7= TrackingOrderInformation.order_type_element()
+print(text7)
+text1= TrackingOrderInformation.guest_element()
+print(text1)
+text2= TrackingOrderInformation.Table_No_element()
+print(text2)
+text3= TrackingOrderInformation.Date_type_element()
+print(text3)
+text4= TrackingOrderInformation.Time_type_element()
+print(text4)
+
 
 # UserReservation= Create_Reservation(driver)
 # UserReservation.NoOfGuests_textbox()

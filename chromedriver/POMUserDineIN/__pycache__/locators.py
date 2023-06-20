@@ -30,7 +30,7 @@ print(selenium.__version__)
 
 class UserApp_SelectItem:
     def __init__(self, driver):
-        self.driver = driver
+        self.driver = driver 
     
     def WAKHA_AlBrasha(self):
         WAKHA_AlBrasha = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//body/div[@id='root']/div[contains(@class,'mx-4')]/div[contains(@class,'flex flex-col md:flex-row md:flex-wrap')]/div[1]/div[1]/div[1]")))
@@ -241,4 +241,29 @@ class Trackorder:
     def TrackOrder_btn(self):
         TrackOrder_btn = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Track order']")))
         TrackOrder_btn.click() 
-        time.sleep(50)
+        time.sleep(3)
+#Print orders text
+    def Print_OrderNumber(self):
+        Print_OrderNumber = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Order Number")]/following-sibling::div[@class="h7 font-semibold"]')
+        return Print_OrderNumber.text
+    
+    def order_type_element(self):
+        order_type_element = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Order Type")]/following-sibling::div[@class="h7 font-semibold"]')
+        return order_type_element.text  
+    
+    def guest_element(self):
+        guest_element = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Guests")]/following-sibling::div[@class="h7 font-semibold"]')
+        return guest_element.text
+    
+    def Table_No_element(self):
+        Table_No_element = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Table No")]/following-sibling::div[@class="h7 font-semibold"]')
+        return Table_No_element.text
+    
+    def Date_type_element(self):
+        Date_type_element = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Date")]/following-sibling::div[@class="h7 font-semibold"]')
+        return Date_type_element.text
+
+    def Time_type_element(self):
+        Time_type_element = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Time")]/following-sibling::div[@class="h7 font-semibold"]')
+        return Time_type_element.text
+
