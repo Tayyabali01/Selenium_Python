@@ -31,7 +31,7 @@ print(selenium.__version__)
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.maximize_window()
 
-driver.get('https://devuser.yallagrub.com/')
+driver.get('https://demouser.yallagrub.com/')
 WAKHA_AlBrasha = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//body/div[@id='root']/div[contains(@class,'mx-4')]/div[contains(@class,'flex flex-col md:flex-row md:flex-wrap')]/div[1]/div[1]/div[1]")))
 # click the element
 WAKHA_AlBrasha.click()
@@ -223,8 +223,9 @@ time.sleep(3)
 EnterOTP_Textfield = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='otp1']")))
 EnterOTP_Textfield.click()
 EnterOTP_Textfield.send_keys("55690")
+time.sleep(3)
 
-Verify_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Verify']")))
+Verify_btn = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Verify']")))
 Verify_btn.click()
 time.sleep(2)
 

@@ -16,6 +16,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
+
 import requests
 import numpy as np
 import os
@@ -193,10 +194,10 @@ class Personal_Information:
         EnterOTP_Textfield.send_keys(str(OTP_guests))
         time.sleep(2)
 
-    def Verify_btn (self):
+    def Verify_btn(self):
         Verify_btn = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Verify']")))
         Verify_btn.click()
-        time.sleep(5)
+        time.sleep(2)
 
 class UsersCard_Information:
     def __init__(self, driver):
@@ -242,6 +243,7 @@ class Trackorder:
         TrackOrder_btn = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Track order']")))
         TrackOrder_btn.click() 
         time.sleep(3)
+    
 #Print orders text
     def Print_OrderNumber(self):
         Print_OrderNumber = self.driver.find_element(By.XPATH, '//div[@class="h7" and contains(text(), "Order Number")]/following-sibling::div[@class="h7 font-semibold"]')

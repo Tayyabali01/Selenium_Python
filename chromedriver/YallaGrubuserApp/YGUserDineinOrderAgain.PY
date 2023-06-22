@@ -483,6 +483,7 @@ time.sleep(3)
 EnterOTP_Textfield = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='otp1']")))
 EnterOTP_Textfield.click()
 EnterOTP_Textfield.send_keys("55690")
+time.sleep(3)
 
 Verify_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Verify']")))
 Verify_btn.click()

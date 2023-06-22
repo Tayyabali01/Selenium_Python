@@ -64,7 +64,6 @@ Enter_Information.PhoneNumber_Textfield(1527773703)
 Enter_Information.Checkout_btn()
 Enter_Information.EnterOTP_Textfield(55690)
 Enter_Information.Verify_btn()
-
 #UsersCard Information
 Card_Information = UsersCard_Information(driver)
 Card_Information.switch_to_iframe()
@@ -94,6 +93,8 @@ text3= TrackingOrderInformation.Date_type_element()
 print(text3)
 text4= TrackingOrderInformation.Time_type_element()
 print(text4)
+
+
 
 
 # UserReservation= Create_Reservation(driver)
